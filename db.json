@@ -112,5 +112,21 @@
       "image": "https://patioserviceonline.com/uploads/ventrega/popup/1647351931-default-merchant.jpg",
       "category": "category1"
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin",
+      "email": "admin@admin.com",
+      "city": "cochabamba",
+      "password": "admin123"
+    },
+    {
+      "id": 2,
+      "name": "Master",
+      "email": "master@master.com",
+      "city": "cochabamba",
+      "password": "master123"
+    }
   ]
 }

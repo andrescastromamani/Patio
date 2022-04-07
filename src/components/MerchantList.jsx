@@ -5,9 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { MerchantEdit } from "./MerchantEdit";
 import { MerchantCreate } from "./MerchantCreate";
-import Map from './Map';
 import { ExpandableRows } from "./ExpandableRows";
+import { Map } from './Map';
 import { getMerchantsAction, getMerchantAction } from "../redux/actions/merhantActions";
+import { FixedTop } from "./FixedTop";
 
 Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
 Geocode.setLanguage("en");
@@ -18,6 +19,7 @@ const MerchantList = () => {
   useEffect(() => {
     dispatch(getMerchantsAction());
   }, [dispatch])
+
   const merchants = useSelector(state => state.merchants.merchants);
   const [addressFormated, setAddressFormated] = useState('');
   const [merchant, setMerchant] = useState({
@@ -151,6 +153,7 @@ const MerchantList = () => {
   return (
     <>
       <div className="shadow-lg mt-3 p-3 mb-5">
+        <FixedTop />
         <div className="row p-3">
           <div className="col-12 col-md-3 mt-3">
             <button type="button" className="btn btn-dark w-100" data-bs-toggle="modal" data-bs-target="#merchantCreate">

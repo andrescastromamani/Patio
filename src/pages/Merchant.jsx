@@ -1,3 +1,5 @@
+import { FixedComponent } from '../components/FixedComponent';
+import { FixedMotocycle } from '../components/FixedMotocycle';
 import MerchantList from '../components/MerchantList';
 import { Sidebar } from '../components/Sidebar';
 
@@ -9,6 +11,8 @@ export const Merchant = () => {
         <h2 className="text-center">Lista de Comerciantes</h2>
         <Sidebar />
       </div>
+      <FixedComponent />
+      <FixedMotocycle />
       <MerchantList />
     </>
   )

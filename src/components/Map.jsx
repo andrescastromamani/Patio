@@ -6,7 +6,7 @@ const containerStyle = {
 };
 const libraries = ["places"];
 
-const Map = ({ marker, setMarker, mapCreateEdit }) => {
+export const Map = ({ marker, setMarker, mapCreateEdit }) => {
     const onPinDragEnd = (e) => {
         const lat = e.latLng.lat();
         const lng = e.latLng.lng();
@@ -88,4 +88,3 @@ const Map = ({ marker, setMarker, mapCreateEdit }) => {
     )
 }
 
-export default Map

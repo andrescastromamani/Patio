@@ -30,38 +30,29 @@ export const Sidebar = () => {
                     </div>
                     <div className="collapse" id="dashboard-collapse">
                         <ul className="btn-toggle-nav list-unstyled fw-normal pb-1 small ps-3">
-                            <NavLink to="/dashboard1" className="text-white nav-link" >
+                            <NavLink to="/" className="text-white nav-link" >
                                 <i className="fa-solid fa-table-columns"></i> Tablero 1
                             </NavLink>
-                            <NavLink to="/dashboard2" className="text-white nav-link" >
+                            <NavLink to="/" className="text-white nav-link" >
                                 <i className="fa-solid fa-table-columns"></i> Tablero 2
                             </NavLink>
                         </ul>
                     </div>
                 </li>
-                <li>
-                    <NavLink to="/orders" className="text-white nav-link" >
-                        <i className="fa-solid fa-bag-shopping me-2"></i>Ordenes
-                    </NavLink>
-                </li>
-                <li>
-                    <NavLink to="/products" className="text-white nav-link">
-                        <i className="fa-solid fa-award me-2"></i>Productos
-                    </NavLink>
-                </li>
+
             </ul>
             <hr />
             <div className="dropdown">
-                <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+                <a href="/" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="https://github.com/mdo.png" alt="" width="32" height="32" className="rounded-circle me-2" />
                     <strong className="text-white">{user.email}</strong>
                 </a>
                 <ul className="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
-                    <li><a className="dropdown-item" href="#">Configuraciones</a></li>
-                    <li><a className="dropdown-item" href="#">Perfil</a></li>
+                    <li><a className="dropdown-item" href="/">Configuraciones</a></li>
+                    <li><a className="dropdown-item" href="/">Perfil</a></li>
                     <li className="dropdown-divider"></li>
                     {
-                        token && <li><a className="dropdown-item" onClick={handleLogout} data-bs-dismiss="offcanvas" aria-label="Close">Cerrar Sesion</a></li>
+                        token && <li><a href='/' className="dropdown-item" onClick={handleLogout} data-bs-dismiss="offcanvas" aria-label="Close">Cerrar Sesion</a></li>
                     }
                 </ul>
             </div>

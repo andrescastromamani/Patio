@@ -2,31 +2,24 @@ import React from 'react'
 
 export const FixedTop = () => {
     return (
-        <div
-            className='row p-1'
-            style={{
-                position: 'fixed',
-                backgroundColor: 'gray',
-                top: '0',
-                right: '40%',
-                zIndex: '9',
-            }}
-        >
-            <div className="col-3 p-1 bg-green">
-                <p className='text-center'>1</p>
-                <span>Orders</span>
-            </div>
-            <div className="col-3 p-1 bg-danger">
-                <p className='text-center'>1</p>
-                <span>Canceled</span>
-            </div>
-            <div className="col-3 p-1 bg-primary">
-                <p className='text-center'>0</p>
-                <span>Completed</span>
-            </div>
-            <div className="col-3 p-1 bg-info">
-                <p className='text-center'>100.00%</p>
-                <span>Fulfillment</span>
+        <div className='fixed-top'>
+            <div className='row w-50  p-1 fixed-content'>
+                <div className="col-3 p-1 bg-green-transparent">
+                    <p className='text-center text-white fw-bold mb-0'>1</p>
+                    <p className='text-center text-white  mb-0'>Orders</p>
+                </div>
+                <div className="col-3 p-1 bg-red-transparent">
+                    <p className='text-center text-white fw-bold mb-0'>1</p>
+                    <p className='text-center text-white mb-0'>Canceled</p>
+                </div>
+                <div className="col-3 p-1 bg-blue-transparent">
+                    <p className='text-center text-white fw-bold mb-0'>0</p>
+                    <p className='text-center text-white mb-0'>Completed</p>
+                </div>
+                <div className="col-3 p-1 bg-info-transparent">
+                    <p className='text-center text-white fw-bold mb-0'>100.00%</p>
+                    <p className='text-center text-white mb-0'>Fulfillment</p>
+                </div>
             </div>
         </div>
     )

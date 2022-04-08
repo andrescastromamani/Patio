@@ -31,7 +31,7 @@ export const Login = () => {
                     }>
                         <div className="col-12 col-md-8 border-radius-start  bg-green-two m-0 p-0">
                             <div className="d-flex justify-content-center">
-                                <img src="https://scontent.fvvi1-1.fna.fbcdn.net/v/t39.30808-6/276131696_2989285371383891_9039273915655545356_n.jpg?stp=dst-jpg_p843x403&_nc_cat=107&ccb=1-5&_nc_sid=8bfeb9&_nc_ohc=9ZtJoROaSLMAX8SHfZm&tn=zWX-mDAOBWl5WnNC&_nc_ht=scontent.fvvi1-1.fna&oh=00_AT-9QU-a3fGuhg8RZDTredncxrIPV-baP5ZU3sOb74Zwhw&oe=624F65C8" width="70%" alt='parner' />
+                               
                             </div>
                         </div>
                         <div className="col-12 col-md-4">

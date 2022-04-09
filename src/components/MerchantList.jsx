@@ -9,6 +9,8 @@ import { ExpandableRows } from "./ExpandableRows";
 import { Map } from './Map';
 import { getMerchantsAction, getMerchantAction } from "../redux/actions/merhantActions";
 import { FixedTop } from "./FixedTop";
+import { FixedComponent } from "./FixedComponent";
+import { FixedMotocycle } from "./FixedMotocycle";
 
 Geocode.setApiKey(process.env.REACT_APP_GOOGLE_MAPS_API_KEY);
 Geocode.setLanguage("en");
@@ -154,6 +156,8 @@ const MerchantList = () => {
     <>
       <div className="shadow-lg mt-3 p-3 mb-5">
         <FixedTop />
+        <FixedComponent />
+        <FixedMotocycle />
         <div className="row p-3">
           <div className="col-12 col-md-3 mt-3">
             <button type="button" className="btn btn-dark w-100" data-bs-toggle="modal" data-bs-target="#merchantCreate">

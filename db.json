@@ -2,7 +2,7 @@
   "merchants": [
     {
       "id": 1,
-      "name": "Nuevo Merchant",
+      "name": "Nuevo ",
       "email": "mastic@gmail.com",
       "city": "cochabamba",
       "lat": -17.794478817907734,
@@ -15,18 +15,18 @@
       "category": "category2"
     },
     {
-      "address": "Av. Humboldt, Cochabamba, Bolivia",
-      "category": "category3",
-      "city": "cochabamba",
-      "email": "panchita@gmail.com",
       "id": 2,
-      "image": "https://patioserviceonline.com/uploads/ventrega/popup/1648299491-panchita.png",
+      "name": "Panchita Aba",
+      "email": "panchita@gmail.com",
+      "city": "cochabamba",
       "lat": -17.381542573770947,
       "lng": -66.16154584970701,
-      "name": "Panchita",
-      "phone": "+59167425949",
+      "address": "Av. Humboldt, Cochabamba, Bolivia",
       "pincode": 123456,
-      "priority": 1
+      "priority": 1,
+      "phone": "+59167425949",
+      "image": "https://patioserviceonline.com/uploads/ventrega/popup/1648299491-panchita.png",
+      "category": "category3"
     },
     {
       "name": "Merchant Redux",
@@ -100,7 +100,7 @@
     },
     {
       "id": 8,
-      "name": "Merchant Nattynash",
+      "name": "Merchant",
       "email": "merchantnatty@gmail.com",
       "city": "cochabamba",
       "lat": -17.38703055317922,

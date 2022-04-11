@@ -1,10 +1,17 @@
 import React, { useContext } from 'react'
-import { NavLink } from 'react-router-dom'
-import { AuthContext } from '../contexts/AuthContext';
+import { useDispatch } from 'react-redux';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { signOut } from '../redux/actions/authActions';
 
 export const Sidebar = () => {
-    const token = localStorage.getItem('token');
-    const { user, handleLogout } = useContext(AuthContext);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        dispatch(signOut());
+        navigate('/login');
+    }
+    const user = JSON.parse(localStorage.getItem('user'));
+    console.log(user);
     return (
         <div className="offcanvas offcanvas-start d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" tabIndex="-1" id="sidebar" aria-labelledby="offcanvasWithBackdropLabel" style={{ width: 280 }}>
             <a href="/" className="d-flex align-items-center mb-md-0 me-md-auto text-white text-decoration-none">
@@ -45,15 +52,13 @@ export const Sidebar = () => {
             <div className="dropdown">
                 <a href="/" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="https://github.com/mdo.png" alt="" width="32" height="32" className="rounded-circle me-2" />
-                    <strong className="text-white">{user.email}</strong>
+                    <strong className="text-white">{user.name}</strong>
                 </a>
                 <ul className="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
                     <li><a className="dropdown-item" href="/">Configuraciones</a></li>
                     <li><a className="dropdown-item" href="/">Perfil</a></li>
                     <li className="dropdown-divider"></li>
-                    {
-                        token && <li><a href='/' className="dropdown-item" onClick={handleLogout} data-bs-dismiss="offcanvas" aria-label="Close">Cerrar Sesion</a></li>
-                    }
+                    <li><a href='/' className="dropdown-item" onClick={handleLogout} data-bs-dismiss="offcanvas" aria-label="Close">Cerrar Sesion</a></li>
                 </ul>
             </div>
         </div>

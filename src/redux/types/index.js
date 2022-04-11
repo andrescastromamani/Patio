@@ -1,3 +1,8 @@
+export const types = {
+    login: '[Auth] Login',
+    logout: '[Auth] Logout',
+}
+
 export const ADD_MERCHANT = 'ADD_MERCHANT';
 export const ADD_MERCHANT_SUCCESS = 'ADD_MERCHANT_SUCCESS';
 export const ADD_MERCHANT_FAILURE = 'ADD_MERCHANT_FAILURE';

@@ -1,22 +1,28 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { Loading } from '../../components/Loading';
-import { AuthContext } from '../../contexts/AuthContext';
+import { signIn } from '../../redux/actions/authActions';
 
 export const Login = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [loading, setLoading] = useState(false);
-    const { user, setUser, handleLogin } = useContext(AuthContext);
+    const [user, setUser] = useState({
+        username: '',
+        password: ''
+    });
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (user.email === '' || user.password === '') {
-            alert('Please fill all fields')
-        } else {
-            if (user.email === 'admin@admin.com' && user.password === 'admin123') {
-                setLoading(true)
-                handleLogin(user)
-            } else {
-                alert('Invalid credentials')
-            }
-        }
+        setLoading(true)
+        dispatch(signIn(user.username, user.password))
+            .then(() => {
+                setLoading(false)
+                navigate('/');
+            })
+            .catch(err => {
+                console.log(err);
+            });
     }
     return (
         <div className="content-center">
@@ -31,7 +37,7 @@ export const Login = () => {
                     }>
                         <div className="col-12 col-md-8 border-radius-start  bg-green-two m-0 p-0">
                             <div className="d-flex justify-content-center">
-                               
+
                             </div>
                         </div>
                         <div className="col-12 col-md-4">
@@ -44,15 +50,22 @@ export const Login = () => {
                                     <form id="form-login" className="login-form" onSubmit={handleSubmit}>
                                         <div className="mt-4 div-input">
                                             <input
-                                                type="email"
-                                                name="email"
-                                                id="email"
+                                                type="text"
+                                                name="username"
+                                                id="username"
                                                 autoComplete='off'
                                                 required
-                                                onChange={(e) => setUser({ ...user, email: e.target.value })}
+                                                onChange={
+                                                    (e) => {
+                                                        setUser({
+                                                            ...user,
+                                                            username: e.target.value
+                                                        })
+                                                    }
+                                                }
                                             />
                                             <span></span>
-                                            <label htmlFor="email">Correo Electronico</label>
+                                            <label htmlFor="username">Nombre de Usuario</label>
                                         </div>
                                         <div className="mt-4 div-input">
                                             <input
@@ -60,7 +73,12 @@ export const Login = () => {
                                                 name="password"
                                                 id="password"
                                                 required
-                                                onChange={(e) => setUser({ ...user, password: e.target.value })}
+                                                onChange={
+                                                    (e) => setUser({
+                                                        ...user,
+                                                        password: e.target.value
+                                                    })
+                                                }
                                             />
                                             <span></span>
                                             <label htmlFor="password">Contraseña</label>

@@ -5,7 +5,7 @@ import { data } from '../data/data';
 
 export const MerchantDetails = () => {
     const { merchantId } = useParams();
-    const { id, name, city, phone, email, address, status, payment_method, category } = data.find(merchant => merchant.id == merchantId);
+    const { id, name, city, phone, email, address, status, payment_method, category } = data.find(merchant => merchant.id === merchantId);
     return (
         <>
             <div className="shadow-sm p-3 mb-5 bg-body rounded">
